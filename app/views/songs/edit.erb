@@ -1,0 +1,13 @@
+<h2>Update Song</h2>
+
+<form action="/songs/<%= @song.slug %>" method="post">
+    <input type="hidden" id="hidden" name="_method" value="patch">
+    Song Name <input type="text" name="song[name]" id="Name">
+    Artist Name <input type="text" name="artist[name]" id="Artist Name">
+    Genres
+    <% Genre.all.each do |genre| %>
+        <input id="<%= genre.name %>" type="checkbox" name="genres[]" value="<%= genre.id %>"> <!--<%= genre.name %></input> -->
+    <% end %>
+    
+    <input type="submit" value="Save" id="save">
+</form>
