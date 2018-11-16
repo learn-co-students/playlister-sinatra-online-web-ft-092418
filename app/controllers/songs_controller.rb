@@ -26,9 +26,9 @@ class SongsController < ApplicationController
 
   #    binding.pry
       @song.genre_ids = params[:genres]
-      @song.genres =params[:genres].map{|g| Genre.find(g)}
+    #  @song.genres =params[:genres].map{|g| Genre.find(g)}
       @song.artist = Artist.find_or_create_by(name: params[:artist][:name])
-  #    binding.pry
+    #  binding.pry
       @song.save
       session[:message] = "Successfully updated song."
       @message = "Successfully updated song."
